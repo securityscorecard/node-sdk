@@ -1,0 +1,7 @@
+{
+  "name": "@node-sdk/sdk",
+  "version": "0.0.1",
+  "description": "SecurityScorecard Public SDK",
+  "main": "index.js",
+  "license": "MIT"
+}

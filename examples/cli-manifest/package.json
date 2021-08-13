@@ -1,0 +1,15 @@
+{
+  "name": "@securityscorecard/cli-manifest",
+  "version": "1.0.4",
+  "description": "Examples and Experimental app list",
+  "author": "Cristian Leyes <cleyes@securityscorecard.io>",
+  "license": "MIT",
+  "apps": {
+    "examples": [],
+    "experiments": [
+      {
+        "name": "experimental-bare-app"
+      }
+    ]
+  }
+}
