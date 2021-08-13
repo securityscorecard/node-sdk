@@ -1,0 +1,9 @@
+**/*{.,-}min.js
+/build/**
+.git/**
+/coverage/**
+/public/**
+/tf/**
+/node_modules/**
+**/node_modules/**
+*.codegen.*

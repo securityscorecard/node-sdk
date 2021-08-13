@@ -1,0 +1,10 @@
+**/*{.,-}min.js
+/build/**
+.git/**
+/coverage/**
+/tf/**
+/node_modules/**
+**/node_modules/**
+*.codegen.*
+.vercel/**
+**/.vercel/**
