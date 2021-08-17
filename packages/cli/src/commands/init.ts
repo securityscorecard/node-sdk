@@ -9,10 +9,10 @@ import {
   IExampleItem,
   IInitArguments,
   IValidateExtraction,
-  IPackageManifest
+  IPackageManifest,
 } from './types';
 
-const NPM_SSC = '@securityscorecard/'
+const NPM_SSC = '@securityscorecard/';
 const CLI_MANIFEST = `${NPM_SSC}cli-manifest`;
 
 const fetchExampleList = async (): Promise<IExampleItem[] | undefined> => {
@@ -21,8 +21,10 @@ const fetchExampleList = async (): Promise<IExampleItem[] | undefined> => {
   const spinner = ora(operation).start();
 
   try {
-    const response = await pacote.manifest(CLI_MANIFEST, { fullMetadata: true } ) as IPackageManifest;
-    exampleList = [...response?.apps.experiments!, ...response?.apps.examples!]
+    const response = (await pacote.manifest(CLI_MANIFEST, {
+      fullMetadata: true,
+    })) as IPackageManifest;
+    exampleList = [...response?.apps.experiments!, ...response?.apps.examples!];
     spinner.succeed(operation);
   } catch (err) {
     spinner.fail(operation);
@@ -76,11 +78,7 @@ const validateExtraction = async (
     : { continue: true };
 
 const initialize = async (args: IInitArguments): Promise<void> => {
-  let example = args.example!;
-
-  if (!args?.example) {
-    example = await choseExample();
-  }
+  const example: string = args?.example! || (await choseExample());
 
   log(info('Initialing example:'), details(example));
   const path = `${NPM_SSC}${example}`;
@@ -90,7 +88,6 @@ const initialize = async (args: IInitArguments): Promise<void> => {
   if (folderExists?.continue) {
     await extractExample({ path, name: example, folder });
   }
-
 };
 
 export default initialize;
