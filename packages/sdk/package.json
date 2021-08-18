@@ -1,5 +1,5 @@
 {
-  "name": "@node-sdk/sdk",
+  "name": "@securityscorecard/sdk",
   "version": "0.0.1",
   "description": "SecurityScorecard Public SDK",
   "main": "index.js",

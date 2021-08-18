@@ -3,7 +3,7 @@ import ora from 'ora';
 import axios from 'axios';
 import { readRc } from '../utils/rc';
 import { IInstallArguments } from './types';
-import { log, error, info } from '../utils/logger';
+import { log, error } from '../utils/logger';
 import { SSC_MANIFEST, SSC_RC_PATH, API } from '../utils/helpers';
 
 const urlFromManifest = (): string =>
