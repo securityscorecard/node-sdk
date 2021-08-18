@@ -23,6 +23,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@commitlint/prompt": "^13.1.0",
+    "@types/commander": "^2.12.2",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.13",
     "@types/ramda": "^0.27.44",
