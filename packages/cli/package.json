@@ -1,9 +1,13 @@
 {
-  "name": "@node-sdk/cli",
+  "name": "@securityscorecard/cli",
   "version": "0.0.1",
   "description": "SecurityScorecard CLI",
   "main": "./src/index.js",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --ext .ts --ext .js",
+    "cli": "ts-eager ./src/index.ts"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "chalk": "^4.1.2",
@@ -12,9 +16,6 @@
     "ora": "^5.4.1",
     "pacote": "^11.3.5",
     "yaml": "^1.10.2"
-  },
-  "scripts": {
-    "cli": "ts-eager ./src/index.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^7.3.3",

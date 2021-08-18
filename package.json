@@ -1,8 +1,8 @@
 {
   "name": "@securityscorecard/node-sdk",
   "description": "SecurityScorecard Dev Tools",
+  "version": "0.0.2",
   "private": true,
-  "version": "0.0.1",
   "workspaces": [
     "packages/*"
   ],
@@ -10,21 +10,32 @@
     "node": "14.17.4"
   },
   "scripts": {
-    "lint": "eslint . --ext .ts",
-    "eslint": "eslint"
+    "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+    "pre-commit": "lerna run lint --scope=@securityscorecard/cli"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "license": "UNLICENSED",
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/prompt": "^13.1.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.13",
     "@types/ramda": "^0.27.44",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
+    "cross-env": "^7.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   },
