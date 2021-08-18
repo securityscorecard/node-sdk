@@ -1,6 +1,6 @@
 import fs from 'fs';
 import ora from 'ora';
-import axios from 'axios';
+import request from 'superagent';
 import { readRc } from '../utils/rc';
 import { IInstallArguments } from './types';
 import { log, error } from '../utils/logger';
@@ -14,7 +14,6 @@ const install = async (args: IInstallArguments) => {
   const operation = 'Installing App';
   const url: string = args?.url || urlFromManifest();
   const env: string = args?.enviroment!;
-
   const spinner = ora(operation).start();
 
   if (!env) {
@@ -37,18 +36,14 @@ const install = async (args: IInstallArguments) => {
     return;
   }
 
-  const instance = axios.create({
-    baseURL: API[env],
-    timeout: 10000,
-    headers: {
-      Authorization: `Token ${token}`,
-    },
-  });
-
   try {
-    await instance.post('/apps', {
-      url,
-    });
+    await request('POST', `${API[env]}/apps`)
+      .set({
+        Authorization: `Token ${token}`,
+      })
+      .set('Content-Type', 'application/json')
+      .send({ url });
+
     spinner.succeed(operation);
     // propper message to display here "visit your app" or "docs: https://..."
   } catch (err) {
