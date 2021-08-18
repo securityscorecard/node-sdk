@@ -9,6 +9,9 @@
     "experiments": [
       {
         "name": "experimental-bare-app"
+      },
+      {
+        "name": "experimental-full-app"
       }
     ]
   }
