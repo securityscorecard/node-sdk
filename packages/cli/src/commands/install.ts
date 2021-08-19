@@ -36,7 +36,7 @@ const install = async (args: IInstallArguments) => {
   }
 
   try {
-    await request('POST', `${API[env]}/apps`)
+    const { body } = await request('POST', `${API[env]}/apps`)
       .set({
         Authorization: `Token ${token}`,
       })
@@ -44,7 +44,12 @@ const install = async (args: IInstallArguments) => {
       .send({ url });
 
     spinner.succeed(operation);
-    log(info('\n🚀 Congratulations, now you can find your application at', `\n${PLATFORM_URL[env]}/marketplace`));
+    log(
+      info(
+        '\n🚀 Congratulations, now you can find your application at',
+        `\n${PLATFORM_URL[env]}/marketplace/${body.id}`,
+      ),
+    );
   } catch (err) {
     spinner.fail(operation);
     log(error('Something went wrong.', err));
