@@ -34,12 +34,23 @@ const fetchExampleList = async (): Promise<IExampleItem[] | undefined> => {
   return exampleList;
 };
 
+const stepsToFollow = (name: string) => {
+  log(info('\n🎉 Now you are able to open your project, run:', `\n $ cd ${name}`));
+  log(
+    info(
+      '\nAlso, you could follow the installation steps:',
+      '\nhttps://securityscorecard.readme.io/docs/creating-an-app',
+    ),
+  );
+};
+
 const extractExample = async ({ path, name, folder }: IExampleExtractor) => {
   const operation = `Extracting example: ${name}`;
   const spinner = ora(operation).start();
   try {
     await pacote.extract(path, folder);
     spinner.succeed(operation);
+    stepsToFollow(name);
   } catch (e) {
     spinner.fail(operation);
     log(error('Could not extract example'), e.stderr);
@@ -63,9 +74,7 @@ const choseExample = async (): Promise<string> => {
   return answer.example!;
 };
 
-const validateExtraction = async (
-  folder: string,
-): Promise<IValidateExtraction> =>
+const validateExtraction = async (folder: string): Promise<IValidateExtraction> =>
   fs.existsSync(folder)
     ? inquirer.prompt([
         {
@@ -80,7 +89,7 @@ const validateExtraction = async (
 const initialize = async (args: IInitArguments): Promise<void> => {
   const example: string = args?.example! || (await choseExample());
 
-  log(info('Initialing example:'), details(example));
+  log(info('\nInitialing example:'), details(example));
   const path = `${NPM_SSC}${example}`;
   const folder = args.folder || example;
   const folderExists = await validateExtraction(folder);
