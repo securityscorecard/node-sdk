@@ -10,9 +10,10 @@
     "node": "14.17.4"
   },
   "scripts": {
-    "prepare": "husky install",
+    "lerna": "lerna",
+    "lint": "eslint . --ext .ts --ext .js",
     "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e $HUSKY_GIT_PARAMS",
-    "pre-commit": "[[ -n $HUSKY_BYPASS ]] || lerna run lint --scope=@securityscorecard/cli",
+    "pre-commit": "[[ -n $HUSKY_BYPASS ]] || yarn lint",
     "new-version": "cross-env HUSKY_BYPASS=true lerna version --conventional-commits -m 'chore(release): publish'"
   },
   "commitlint": {
