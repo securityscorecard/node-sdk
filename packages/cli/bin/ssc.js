@@ -35,4 +35,4 @@ if (major > 16) {
 }
 
 // eslint-disable-next-line import/no-unresolved
-require('../build/index.js').run('ssc');
+require('../build/index.js');

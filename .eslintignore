@@ -1,5 +1,4 @@
 **/*{.,-}min.js
-/build/**
 .git/**
 /coverage/**
 /public/**
@@ -7,3 +6,7 @@
 /node_modules/**
 **/node_modules/**
 *.codegen.*
+# Ignore build artifacts
+/packages/*/build
+# Ignore examples
+**/examples/**

@@ -1,12 +1,12 @@
 {
   "name": "@securityscorecard/cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "SecurityScorecard CLI",
-  "main": "build/index.js",
+  "main": "bin/ssc.js",
   "license": "MIT",
   "bin": {
-    "ssc": "build/index.js",
-    "ssc-cli": "build/index.js"
+    "ssc": "bin/ssc.js",
+    "ssc-cli": "bin/ssc.js"
   },
   "files": [
     "build",
@@ -14,8 +14,7 @@
   ],
   "scripts": {
     "cli": "ts-eager ./src/index.ts",
-    "lint": "eslint . --ext .ts --ext .js",
-    "build": "tsc src/*.ts --esModuleInterop --outDir build "
+    "build": "tsc src/*.ts --esModuleInterop --outDir build"
   },
   "dependencies": {
     "axios": "^0.21.1",
