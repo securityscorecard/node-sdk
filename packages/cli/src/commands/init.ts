@@ -34,8 +34,8 @@ const fetchExampleList = async (): Promise<IExampleItem[] | undefined> => {
   return exampleList;
 };
 
-const stepsToFollow = (name: string) => {
-  log(info('\n🎉 Now you are able to open your project, run:', `\n $ cd ${name}`));
+const stepsToFollow = (folder: string) => {
+  log(info('\n🎉 Now you are able to open your project, run:', `\n $ cd ${folder}`));
   log(
     info(
       '\nAlso, you could follow the installation steps:',
@@ -45,12 +45,12 @@ const stepsToFollow = (name: string) => {
 };
 
 const extractExample = async ({ path, name, folder }: IExampleExtractor) => {
-  const operation = `Extracting example: ${name}`;
+  const operation = `Extracting example ${name} into ${folder}`;
   const spinner = ora(operation).start();
   try {
     await pacote.extract(path, folder);
     spinner.succeed(operation);
-    stepsToFollow(name);
+    stepsToFollow(folder);
   } catch (e) {
     spinner.fail(operation);
     log(error('Could not extract example'), e.stderr);
