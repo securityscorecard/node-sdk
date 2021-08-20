@@ -12,7 +12,7 @@ program
   .command('init')
   .description('choose your example to begin with')
   .option('-e, --example [value]', 'Example Name')
-  .option('-folder, --folder [value]', 'Extraction Folder')
+  .option('-f, --folder [value]', 'Extraction Folder')
   .action(initialize);
 
 program
