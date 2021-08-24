@@ -14,7 +14,8 @@
     "lint": "eslint . --ext .ts --ext .js",
     "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e $HUSKY_GIT_PARAMS",
     "pre-commit": "[[ -n $HUSKY_BYPASS ]] || yarn lint",
-    "new-version": "cross-env HUSKY_BYPASS=true lerna version --conventional-commits -m 'chore(release): publish'"
+    "new-version": "cross-env HUSKY_BYPASS=true lerna version --conventional-commits -m 'chore(release): publish'",
+    "test": "jest"
   },
   "commitlint": {
     "extends": [
@@ -23,6 +24,9 @@
   },
   "license": "UNLICENSED",
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@commitlint/prompt": "^13.1.0",
@@ -32,13 +36,17 @@
     "@types/ramda": "^0.27.44",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^27.0.6",
     "cross-env": "^7.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.0",
+    "jest": "^27.0.6",
     "lerna": "^4.0.0",
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"

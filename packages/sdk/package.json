@@ -2,6 +2,27 @@
   "name": "@securityscorecard/sdk",
   "version": "0.3.0",
   "description": "SecurityScorecard Public SDK",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "build/src/index.js",
+  "license": "MIT",
+  "files": ["build", "!*/__tests__/*"],
+  "scripts": {
+    "build": "tsc",
+    "test": "NODE_ENV=test jest",
+    "test:clear": "NODE_ENV=test jest --clearCache"
+  },
+  "devDependencies": {
+    "@types/nock": "^11.1.0",
+    "@types/normalize-url": "^4.2.0",
+    "@types/snakecase-keys": "^3.1.0",
+    "nock": "^13.1.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@types/superagent": "^4.1.12",
+    "normalize-url": "^6.1.0",
+    "rambda": "^6.9.0",
+    "snakecase-keys": "^4.0.2",
+    "superagent": "^6.1.0"
+  }
 }
