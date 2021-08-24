@@ -53,6 +53,8 @@
   },
   "dependencies": {},
   "resolutions": {
-    "**/lodash": "^4.17.21"
+    "**/lodash": "^4.17.21",
+    "**/glob-parent": "^5.1.2",
+    "**/braces": "^2.3.1"
   }
 }
