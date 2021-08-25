@@ -3,7 +3,6 @@ type SecurityScorecardModule = {
 };
 
 // Apps Module
-/* eslint-disable no-unused-vars */
 export type AppsModule = SecurityScorecardModule & {
   install(req: { url: string }): Promise<{ id: string; url: string; name: string }>;
   sendSignals(
@@ -24,4 +23,3 @@ export type AppsModule = SecurityScorecardModule & {
     // eslint-disable-next-line camelcase
   }): Promise<{ next_url: string }>;
 };
-/* eslint-enable no-unused-vars */

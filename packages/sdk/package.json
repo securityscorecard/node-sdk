@@ -1,6 +1,7 @@
 {
   "name": "@securityscorecard/sdk",
   "version": "0.3.0",
+  "private": false,
   "description": "SecurityScorecard Public SDK",
   "main": "build/src/index.js",
   "license": "MIT",
@@ -9,6 +10,9 @@
     "build": "tsc",
     "test": "NODE_ENV=test jest",
     "test:clear": "NODE_ENV=test jest --clearCache"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/nock": "^11.1.0",
