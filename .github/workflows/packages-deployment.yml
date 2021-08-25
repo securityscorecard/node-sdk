@@ -17,16 +17,16 @@ jobs:
         with:
           node-version: '14.17.4'
 
-      - name: Configure CI Git User
-        run: |
-          git config --global user.email "frontend+npmbot@securityscorecard.io"
-          git config --global user.name "ci@$GITHUB_ACTOR"
-        env:
-          GITHUB_ACTOR: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Packages
         run: yarn install
+
+      - name: Run Tests
+        run: yarn test
 
       - name: Build Packages
         run: yarn lerna run build
