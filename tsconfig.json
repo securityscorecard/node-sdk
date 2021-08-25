@@ -23,6 +23,9 @@
   "references": [
     {
       "path": "packages/cli"
+    },
+    {
+      "path": "packages/sdk"
     }
   ],
   "exclude": ["node_modules", "dist", "*.d.ts"]

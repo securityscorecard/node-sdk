@@ -1,8 +1,8 @@
 import snakecaseKeys from 'snakecase-keys';
-import { HTTPMethod, ISecurityScorecardApi } from '../types';
+import { HTTPMethod, SecurityScorecardApi } from '../types';
 import { AppsModule } from './types';
 
-export default function Apps(api: ISecurityScorecardApi): AppsModule {
+export default function Apps(api: SecurityScorecardApi): AppsModule {
   return {
     name: 'Apps',
     async install(InstallRequest: { url: string }): Promise<{ id: string; url: string; name: string }> {

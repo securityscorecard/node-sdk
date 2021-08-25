@@ -4,6 +4,9 @@
   "description": "Examples and Experimental app list",
   "author": "Cristian Leyes <cleyes@securityscorecard.io>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "apps": {
     "examples": [],
     "experiments": [

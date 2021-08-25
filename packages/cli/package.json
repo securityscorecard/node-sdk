@@ -14,7 +14,11 @@
   ],
   "scripts": {
     "cli": "ts-eager ./src/index.ts",
+    "test": "echo 'TODO: add propper testing'",
     "build": "tsc src/*.ts --esModuleInterop --outDir build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "axios": "^0.21.1",

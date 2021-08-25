@@ -14,7 +14,8 @@
     "lint": "eslint . --ext .ts --ext .js",
     "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -e $HUSKY_GIT_PARAMS",
     "pre-commit": "[[ -n $HUSKY_BYPASS ]] || yarn lint",
-    "new-version": "cross-env HUSKY_BYPASS=true lerna version --conventional-commits -m 'chore(release): publish'",
+    "new-version": "cross-env HUSKY_BYPASS=true lerna version --conventional-commits -m 'chore(version): new version'",
+    "new-release": "cross-env HUSKY_BYPASS=true lerna publish --conventional-commits -m 'chore(release): new release'",
     "test": "jest"
   },
   "commitlint": {
