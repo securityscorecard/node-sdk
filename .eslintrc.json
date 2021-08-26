@@ -26,17 +26,10 @@
         }
     },
     "rules": {
+        "quotes": ["error", "single", { "avoidEscape": true }],
         "prettier/prettier": "error",
         "import/extensions": "never",
         "implicit-arrow-linebreak": 0,
-        "quotes": [
-            "error",
-            "single",
-            { 
-                "avoidEscape": true, 
-                "allowTemplateLiterals": false 
-            }
-        ],
         "no-shadow": "off",
         "no-unused-vars": "off",
         "@typescript-eslint/no-shadow": "error",
