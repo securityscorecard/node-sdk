@@ -1,5 +1,5 @@
 {
-  "name": "@securityscorecard/node-sdk",
+  "name": "node-sdk",
   "description": "SecurityScorecard Dev Tools",
   "version": "0.0.2",
   "private": true,
@@ -23,7 +23,7 @@
       "@commitlint/config-conventional"
     ]
   },
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
