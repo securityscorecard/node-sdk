@@ -5,7 +5,12 @@
   "description": "SecurityScorecard Public SDK",
   "main": "build/src/index.js",
   "license": "MIT",
-  "files": ["build", "!*/__tests__/*"],
+  "files": [
+    "build", 
+    "!*/__tests__/*", 
+    "CHANGELOG.md", 
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "NODE_ENV=test jest",

@@ -10,7 +10,9 @@
   },
   "files": [
     "build",
-    "bin"
+    "bin",
+    "CHANGELOG.MD",
+    "README.md"
   ],
   "scripts": {
     "cli": "ts-eager ./src/index.ts",

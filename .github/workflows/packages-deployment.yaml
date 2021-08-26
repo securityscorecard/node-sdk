@@ -32,5 +32,8 @@ jobs:
       - name: Build Packages
         run: yarn lerna run build
 
+      - name: New Version
+        run: 'yarn lerna version --yes --conventional-commits'
+
       - name: Publish package
-        run: 'yarn lerna publish --yes --message "chore: release new versions"'
+        run: 'yarn lerna publish from-git --yest"'
