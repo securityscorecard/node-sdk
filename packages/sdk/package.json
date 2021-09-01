@@ -1,14 +1,14 @@
 {
   "name": "@securityscorecard/sdk",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "description": "SecurityScorecard Public SDK",
   "main": "build/src/index.js",
   "license": "MIT",
   "files": [
-    "build", 
-    "!*/__tests__/*", 
-    "CHANGELOG.md", 
+    "build",
+    "!*/__tests__/*",
+    "CHANGELOG.md",
     "README.md"
   ],
   "scripts": {
