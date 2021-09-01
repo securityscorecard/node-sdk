@@ -1,12 +1,12 @@
 import { program } from 'commander';
 import { title, log } from './utils/logger';
-import initialize from './commands/init';
+import { initialize } from './commands/initialize';
 import configure from './commands/configure';
 import install from './commands/install';
 
 program.version('0.0.1');
 
-log(title('🛡️ SecurityScorecard'));
+log(title('SecurityScorecard'));
 
 program
   .command('init')

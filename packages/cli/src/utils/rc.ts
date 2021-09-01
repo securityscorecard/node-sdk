@@ -1,6 +1,6 @@
 import fs from 'fs';
 import yaml from 'yaml';
-import { IRunCommand } from '../commands/types';
+import { IRunCommand } from './types';
 
 export const readRc = (rcPath: string): IRunCommand =>
   fs.existsSync(rcPath) && yaml.parse(fs.readFileSync(rcPath, 'utf8'));

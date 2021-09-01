@@ -2,14 +2,14 @@ import fs from 'fs';
 import ora from 'ora';
 import request from 'superagent';
 import { readRc } from '../utils/rc';
-import { IInstallArguments } from './types';
+import { InstallArguments } from '../utils/types';
 import { log, error, info } from '../utils/logger';
 import { SSC_MANIFEST, SSC_RC_PATH, API, PLATFORM_URL } from '../utils/helpers';
 
 const urlFromManifest = (): string =>
   fs.existsSync(SSC_MANIFEST) && JSON.parse(fs.readFileSync(SSC_MANIFEST, 'utf8')).url;
 
-const install = async (args: IInstallArguments) => {
+const install = async (args: InstallArguments) => {
   const operation = 'Installing App';
   const url: string = args?.url || urlFromManifest();
   const env: string = args?.enviroment!;
