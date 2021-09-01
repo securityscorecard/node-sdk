@@ -1,6 +1,6 @@
 {
   "name": "@securityscorecard/cli",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "SecurityScorecard CLI",
   "main": "bin/ssc.js",
   "license": "MIT",
@@ -16,8 +16,9 @@
   ],
   "scripts": {
     "cli": "ts-eager ./src/index.ts",
-    "test": "echo 'TODO: add propper testing'",
-    "build": "tsc src/*.ts --esModuleInterop --outDir build"
+    "build": "tsc src/*.ts --esModuleInterop --outDir build",
+    "test": "NODE_ENV=test jest",
+    "test:clear": "NODE_ENV=test jest --clearCache"
   },
   "publishConfig": {
     "access": "public"
