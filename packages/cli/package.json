@@ -1,6 +1,6 @@
 {
   "name": "@securityscorecard/cli",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "SecurityScorecard CLI",
   "main": "bin/ssc.js",
   "license": "MIT",
