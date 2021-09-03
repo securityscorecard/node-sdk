@@ -38,4 +38,4 @@ jobs:
         run: yarn lerna run build
 
       - name: Publish package
-        run: 'yarn lerna publish from-package --yes'
+        run: 'yarn lerna publish from-package --yes --no-verify-access'
