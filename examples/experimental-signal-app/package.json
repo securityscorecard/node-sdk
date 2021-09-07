@@ -1,6 +1,6 @@
 {
   "name": "@securityscorecard/experimental-signal-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "experimental signal app",
   "main": "index.js",
   "author": "Cristian Leyes <cleyes@securityscorecard.io>",
