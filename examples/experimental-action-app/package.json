@@ -1,7 +1,7 @@
 {
-  "name": "@securityscorecard/experimental-bare-app",
+  "name": "@securityscorecard/experimental-action-app",
   "version": "1.0.0",
-  "description": "experimental bare app",
+  "description": "experimental action app",
   "main": "index.js",
   "author": "Cristian Leyes <cleyes@securityscorecard.io>",
   "license": "MIT",
