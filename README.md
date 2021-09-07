@@ -9,11 +9,14 @@ IMPORTANT DISCLAIMER: this is still in an experimental phase, please do not use 
 - a multi-package repository, including an SDK library, a CLI, and multiple code examples
 - each package is versioned (semver) and published separately under the `@securityscorecard` namespace
 
-## contributing
+## Usage
+
+We provide the right tools to initialize, create and integrate your apps with our services. SecurityScorecard **instantly identifies vulnerabilities, active exploits, and advanced cyber threats** to help you rigorously protect your business and strengthen your security posture - from an outside-in perspective, enabling you to see what a hacker sees.
+## Contributing
 
 during this experimental phase pull requests are not going to be received, once we go live we'll include details contributing guidelines here.
 
-## development workflow
+## Development workflow
 
 Create/edit packages in `packages` folder. Use existing packages (like env) as template
 
