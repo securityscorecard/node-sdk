@@ -1,9 +1,9 @@
 {
-   "name": "Experimental Toretto App",
-   "description": "Fast & Safe",
-   "long_description": "Toretto is a tiny and fast app only for experimental purposes only",
-   "url": "example.com",
-   "homepage": "https://example.com",
-   "developer": "example.com",
-   "logo_url": "https://example.com/assets/image.gif"
+   "name": "Experimental Bare App",
+   "description": "experimental bare app",
+   "long_description": "app only for experimental purposes only",
+   "url": "https://bare-app-cristiandley.vercel.app/public/manifest.json",
+   "homepage": "https://bare-app-cristiandley.vercel.app",
+   "developer": "cristiandley.com",
+   "logo_url": "https://avatars.githubusercontent.com/u/1873659?s=60&v=4"
 }

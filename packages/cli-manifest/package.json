@@ -14,7 +14,10 @@
         "name": "experimental-bare-app"
       },
       {
-        "name": "experimental-full-app"
+        "name": "experimental-action-app"
+      },
+      {
+        "name": "experimental-signal-app"
       }
     ]
   }

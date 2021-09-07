@@ -1,0 +1,16 @@
+{
+  "name": "@securityscorecard/experimental-bare-app",
+  "version": "1.0.0",
+  "description": "experimental bare app",
+  "main": "index.js",
+  "author": "Cristian Leyes <cleyes@securityscorecard.io>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./api/serverless.js"
+  },
+  "dependencies": {
+    "@securityscorecard/sdk": "^0.4.1",
+    "fastify": "^3.20.1",
+    "fastify-static": "^4.2.3"
+  }
+}
