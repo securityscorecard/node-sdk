@@ -8,10 +8,14 @@ const server = fastify({
   logger: true,
 });
 
-const ssc = SSC({ token: '6TyzV3lNS6vFwcFgMuuTqods2Fnb', host: 'https://platform-api.securityscorecard.tech' });
+const TOKEN = 'YOUR_TOKEN';
+
+const ssc = SSC({ token: TOKEN, host: 'https://platform-api.securityscorecard.tech' });
 
 server.get('/', async (request, reply) => reply.send("hi"));
 
+// this is an event that could be dispatched by a custom event, 
+// for the sole purpose of the example, it will be propagated using a post event
 server.post('/signal', async(request, reply) => {
   try {
     const signalResponse = await ssc.apps.sendSignals('signal_app.sample_information', [
