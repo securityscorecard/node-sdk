@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/sdk@0.4.1...@securityscorecard/sdk@0.5.0) (2021-09-07)
+
+
+### Features
+
+* **all:** documentation and examples improvement ([adeb4e1](https://github.com/securityscorecard/node-sdk/commit/adeb4e1836f4ecaec67f1e6e21a28039abbb0f06))
+
+
+
+
+
 ## [0.4.1](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/sdk@0.4.0...@securityscorecard/sdk@0.4.1) (2021-09-03)
 
 **Note:** Version bump only for package @securityscorecard/sdk
