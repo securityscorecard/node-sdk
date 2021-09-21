@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/cli-manifest@1.0.9...@securityscorecard/cli-manifest@1.2.0) (2021-09-21)
+
+
+### Features
+
+* **all:** documentation and examples improvement ([73aa135](https://github.com/securityscorecard/node-sdk/commit/73aa135651d15c60e9b4c2682d4f52d23ca30e77))
+
+
+
+
+
 # [1.1.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/cli-manifest@1.0.9...@securityscorecard/cli-manifest@1.1.0) (2021-09-07)
 
 
