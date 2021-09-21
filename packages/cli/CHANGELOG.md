@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/cli@0.4.1...@securityscorecard/cli@0.6.0) (2021-09-21)
+
+
+### Features
+
+* **all:** documentation and examples improvement ([73aa135](https://github.com/securityscorecard/node-sdk/commit/73aa135651d15c60e9b4c2682d4f52d23ca30e77))
+* **cli:** no enviroment required, defaults as production ([ec27c6c](https://github.com/securityscorecard/node-sdk/commit/ec27c6c838d9a07491944fd6a5b2612257169394))
+
+
+
+
+
 # [0.5.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/cli@0.4.1...@securityscorecard/cli@0.5.0) (2021-09-07)
 
 

@@ -4,6 +4,8 @@ import { SSC_RC_PATH, PLATFORM_URL } from '../utils/helpers';
 import { readRc, writeRc } from '../utils/rc';
 import * as inquires from '../utils/inquires';
 
+const message: string = 'What environment do you want to configure?';
+
 const setToken = async (
   rcPath: string,
   {
@@ -16,7 +18,7 @@ const setToken = async (
 ): Promise<void> => writeRc(rcPath, { ...readRc(rcPath), ...{ [env]: { token } } });
 
 const configure = async (args: ConfigArguments) => {
-  const env: string = (await inquires.askEnviroment()).enviroment;
+  const env: string = args.enviroment ? 'production' : (await inquires.askEnviroment(message)).enviroment;
   log(info('\nYou can generate an API token in the following url', `\n${PLATFORM_URL[env]}/my-settings/api`));
   const token: string = args?.token || (await inquires.askToken()).token;
   const existsToken = !!readRc(SSC_RC_PATH)[env]?.token;

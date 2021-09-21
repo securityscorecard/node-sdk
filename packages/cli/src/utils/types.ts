@@ -31,6 +31,7 @@ export interface IPackageManifest extends pacote.ManifestResult {
 
 export type ConfigArguments = {
   token?: string;
+  enviroment: boolean;
 };
 
 export type RunCommandSettings = {
@@ -43,5 +44,5 @@ export interface IRunCommand {
 
 export type InstallArguments = {
   url?: string;
-  enviroment?: string;
+  enviroment: boolean;
 };

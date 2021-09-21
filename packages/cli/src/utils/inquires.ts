@@ -41,14 +41,16 @@ export const askTokenReplacement = (): Promise<{ replace: boolean }> =>
     },
   ]);
 
-export const askEnviroment = (): Promise<{
+export const askEnviroment = (
+  message: string,
+): Promise<{
   enviroment: 'production' | 'testing' | 'development';
 }> =>
   inquirer.prompt([
     {
       type: 'list',
       name: 'enviroment',
-      message: 'What environment do you want to configure?',
+      message,
       choices: ENVIROMENTS,
     },
   ]);
