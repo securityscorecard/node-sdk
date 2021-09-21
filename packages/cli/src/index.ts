@@ -18,13 +18,14 @@ program
 program
   .command('config')
   .description('set your SecurityScorecard credentials')
+  .option('--no-enviroment', 'no enviroment selected')
   .option('-t, --token [value]', 'API Token')
   .action(configure);
 
 program
   .command('install')
   .description('install your app on the marketplace')
-  .option('-e, --enviroment [value]', 'Enviroment')
+  .option('--no-enviroment', 'no enviroment selected')
   .option('-u, --url [value]', 'URL where manifest is published')
   .action(install);
 
