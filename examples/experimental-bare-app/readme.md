@@ -16,7 +16,7 @@ Basic app used to demostrate the workflow of SecurityScorecard's Marketplace.
 ssc config
 ```
 
-> during the process specify wich enviroment you want to set 
+> during the process specify wich environment you want to set 
 
 **3.- Initialize your project**
 

@@ -1,5 +1,7 @@
 import pacote from 'pacote';
 
+export type Enviroment = 'production' | 'testing' | 'development';
+
 export type Example = {
   example?: string;
 };
@@ -31,18 +33,18 @@ export interface IPackageManifest extends pacote.ManifestResult {
 
 export type ConfigArguments = {
   token?: string;
-  enviroment: boolean;
+  environment: boolean;
 };
 
 export type RunCommandSettings = {
   token?: string;
 };
 
-export interface IRunCommand {
+export type IRunCommand = {
   [key: string]: RunCommandSettings;
-}
+};
 
 export type InstallArguments = {
   url?: string;
-  enviroment: boolean;
+  environment: boolean;
 };

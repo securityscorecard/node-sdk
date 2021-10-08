@@ -24,6 +24,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@securityscorecard/sdk": "^0.6.0",
     "chalk": "^4.1.2",
     "commander": "^8.1.0",
     "inquirer": "^8.1.2",

@@ -36,11 +36,16 @@ jobs:
       - name: Install Packages
         run: yarn install --frozen-lockfile
 
+      - name: Build Packages
+        run: yarn build
+
+      - name: Lint
+        run: yarn lint
+
       - name: Run Tests
         run: yarn test
 
-      - name: Build Packages
-        run: yarn lerna run build
+
 
       - name: Publish package
         run: |
