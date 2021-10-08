@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
-import { ENVIROMENTS } from './helpers';
-import { ValidateExtraction, ExampleItem, Example } from './types';
+import { ENVIRONMENTS } from './helpers';
+import { ValidateExtraction, ExampleItem, Example, Enviroment } from './types';
 
 export const askExampleSelection = (examples: ExampleItem[]): Promise<Example> =>
   inquirer.prompt([
@@ -41,16 +41,16 @@ export const askTokenReplacement = (): Promise<{ replace: boolean }> =>
     },
   ]);
 
-export const askEnviroment = (
+export const askEnvironment = (
   message: string,
 ): Promise<{
-  enviroment: 'production' | 'testing' | 'development';
+  environment: Enviroment;
 }> =>
   inquirer.prompt([
     {
       type: 'list',
-      name: 'enviroment',
+      name: 'environment',
       message,
-      choices: ENVIROMENTS,
+      choices: ENVIRONMENTS,
     },
   ]);

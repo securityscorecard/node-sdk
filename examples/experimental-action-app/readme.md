@@ -18,7 +18,7 @@ One of the ways apps can extend our platform is by registering additional action
 ssc config
 ```
 
-> during the process specify wich enviroment you want to set 
+> during the process specify wich environment you want to set 
 
 **3.- Initialize your project**
 
