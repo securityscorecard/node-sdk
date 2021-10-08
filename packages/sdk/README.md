@@ -24,7 +24,25 @@ ssc.apps.updateInstallationData('installation_code', [{'secret_1': 'value'}])
 
 ```js
 // send signals
-ssc.apps.sendSignals('app_name_sapece.signal_type', [{...signal1}, {...signal2}])
+ssc.apps.sendSignals('app_namespace.signal_type', [{...signal1}, {...signal2}])
     .then(signalsResponse => console.log('Signals emmited, check the response for failures', signalsResponse));
 
+```
+
+## Subscriptions Resources
+
+```js
+// send signals
+ssc.subscriptions.owned().then(subscriptions => console.log('List of owned subscriptions', signalsResponse));
+```
+
+## Events Resources
+
+```js
+// send signals
+ssc.events.trigger(({ 
+  ruleId: 'unique_id',
+  type: 'scorecard.changed',
+  event: <EVENT_DETAILS>,
+})).then(({ received }) => console.log('Rule trial', received));
 ```

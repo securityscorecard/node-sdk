@@ -39,11 +39,16 @@ export function SSC(
   const api = new Api(token, {
     host,
   });
+
   // Initialize modules
   const apps = Modules.Apps(api);
+  const subscriptions = Modules.Subscriptions(api);
+  const events = Modules.Events(api);
 
   return {
     api,
     apps,
+    events,
+    subscriptions,
   };
 }

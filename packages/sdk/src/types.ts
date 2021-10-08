@@ -1,4 +1,4 @@
-import { AppsModule } from './modules/types';
+import { AppsModule, EventsModule, SubscriptionsModule } from './modules/types';
 
 export enum HTTPMethod {
   GET = 'get',
@@ -24,4 +24,6 @@ export type SecurityScorecardApi = {
 export type SecurityScorecardSDK = {
   api: SecurityScorecardApi;
   apps: AppsModule;
+  subscriptions: SubscriptionsModule;
+  events: EventsModule;
 };

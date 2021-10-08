@@ -1,3 +1,26 @@
+export type User = {
+  username: string;
+  email?: string;
+  organization?: {
+    domain: string;
+    id: string;
+  };
+  roles?: string[];
+  authMechanism?: string;
+};
+
+export type Subscription = {
+  id: string;
+  pausedAt: string;
+  eventType: string;
+  delivery: { workflow: any };
+  externalEditUrl: string;
+  createdBy: string;
+  createdAt: string;
+  updatedBy: string;
+  updatedAt: string;
+};
+
 type SecurityScorecardModule = {
   name: string;
 };
@@ -22,4 +45,19 @@ export type AppsModule = SecurityScorecardModule & {
     secrets: { key: string; value: string }[];
     // eslint-disable-next-line camelcase
   }): Promise<{ next_url: string }>;
+};
+
+export type SubscriptionList = { entries: Subscription[]; size: number } | undefined;
+
+export type SubscriptionsModule = SecurityScorecardModule & {
+  owned(): Promise<SubscriptionList>;
+};
+
+export type EventsModule = SecurityScorecardModule & {
+  trigger(req: {
+    ruleId?: string;
+    type: string;
+    event: any;
+    realEvent?: boolean;
+  }): Promise<{ received: boolean } | undefined>;
 };
