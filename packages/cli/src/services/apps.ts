@@ -15,4 +15,18 @@ const install = async ({
   return appInfo;
 };
 
-export default { install };
+const validate = async ({
+  token,
+  env,
+  url,
+}: {
+  token: string;
+  env: string;
+  url: string;
+}): Promise<{ success: boolean; message: string }> => {
+  const ssc = SSC({ token, host: API[env] });
+  const validationResult = await ssc.apps.validate({ url });
+  return validationResult;
+};
+
+export default { install, validate };
