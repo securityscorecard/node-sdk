@@ -1,13 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import command from '../commands/install';
 import validateCommand from '../commands/validate';
-// import command from '../commands/validate';
 import * as logger from '../utils/logger';
 import mockedRc from './helpers/rc';
 import apps from '../services/apps';
 
 jest.mock('../utils/inquires');
-// const inquires = require('../utils/inquires');
 
 jest.mock('../utils/rc');
 const rc = require('../utils/rc');
@@ -79,7 +77,7 @@ describe('Validate', () => {
     jest.spyOn(rc, 'urlFromManifest');
     rc.__setUrlFromManifest('https://testurl.com');
 
-    jest.spyOn(apps, 'validate').mockReturnValue(Promise.resolve({ success: true, message: 'some message' }));
+    jest.spyOn(apps, 'validate').mockReturnValue(Promise.resolve({ success: true, message: 'Validation Success' }));
 
     await validateCommand({ environment: true });
 
