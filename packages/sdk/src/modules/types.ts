@@ -28,6 +28,7 @@ type SecurityScorecardModule = {
 // Apps Module
 export type AppsModule = SecurityScorecardModule & {
   install(req: { url: string }): Promise<{ id: string; url: string; name: string }>;
+  validate(req: { url: string }): Promise<{ success: boolean; message: string }>;
   sendSignals(
     signalType: string,
     signals: {
