@@ -13,6 +13,17 @@ export default function Apps(api: SecurityScorecardApi): AppsModule {
       if (!app) throw new Error('Unable to install app, expected to receive app info but nothing was returned');
       return app;
     },
+    async validate(ValidationRequest: { url: string }): Promise<{ success: boolean; message: string }> {
+      const validationResult = await api.apiCall<{ success: boolean; message: string }>('/apps/validate-manifest', {
+        method: HTTPMethod.POST,
+        body: { url: ValidationRequest.url },
+      });
+      if (!validationResult)
+        throw new Error(
+          'Unable to validate app manifest, expected to receive validation result info but nothing was returned',
+        );
+      return validationResult;
+    },
     async sendSignals(
       signalType: string,
       signals: {
