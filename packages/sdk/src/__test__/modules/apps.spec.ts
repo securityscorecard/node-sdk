@@ -27,6 +27,11 @@ const mockValidateManifestSuccessResponse = () => ({
   message: 'Validation Success',
 });
 
+const mockValidateManifestFailedResponse = () => ({
+  success: false,
+  message: 'Error: invalid namespace: "312312 invalid manifest"',
+});
+
 afterAll(() => {
   nockHelper.stop();
 });
@@ -82,6 +87,30 @@ describe('modules -> apps', () => {
           url: 'https://toretto-cristiandley.vercel.app/manifest.json',
         })
         .reply(200, mockValidateManifestSuccessResponse());
+      const appsModule = Apps(api);
+      const app = await appsModule.validate({
+        url: 'https://toretto-cristiandley.vercel.app/manifest.json',
+      });
+      expect(app).toMatchObject(validationInfo);
+      expect(scope.isDone()).toEqual(true);
+    });
+    test('failed validate app manifest', async () => {
+      const token = 'test_4gxJxaiA1uBqOIAoIarFGV';
+      const validationInfo = {
+        success: false,
+        message: 'Error: invalid namespace: "312312 invalid manifest"',
+      };
+      const api = new SecurityScorecardAPI(token, {
+        host: nockHelper.MOCK_SERVER_URL,
+      });
+      const scope = nockHelper.listenMockServer({
+        options: { reqheaders: { Authorization: `Token ${token}` } },
+      });
+      scope
+        .post('/apps/validate-manifest', {
+          url: 'https://toretto-cristiandley.vercel.app/manifest.json',
+        })
+        .reply(200, mockValidateManifestFailedResponse());
       const appsModule = Apps(api);
       const app = await appsModule.validate({
         url: 'https://toretto-cristiandley.vercel.app/manifest.json',
