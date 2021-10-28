@@ -20,6 +20,20 @@ ssc.apps.updateInstallationData('installation_code', [{'secret_1': 'value'}])
     .then(completeInstallationResponse => console.log('Installation data successfully updated', completeInstallationResponse));
 ```
 
+## Validation Resources
+
+```js
+// validate the app manifest
+ssc.apps.validate({url: 'app_manifest_url'})
+    .then(validationResponse => {
+        if (validationResponse.success === true) {
+            console.log('Manifest validation success')
+        } else {
+            console.log('Manifest validation failed with message:', validationResponse.message);
+        }
+    });
+```
+
 ## Signal Resources
 
 ```js
