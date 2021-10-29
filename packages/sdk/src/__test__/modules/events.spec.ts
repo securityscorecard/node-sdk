@@ -33,7 +33,7 @@ describe('Events', () => {
     const statusReceived = { received: true };
     const requestBody = {
       type: 'scorecard.changed',
-      event: { test: 'test_event', trial: { ruleId } },
+      event: { test: 'test_event', trial: { rule_id: ruleId } },
     };
 
     const api = new SecurityScorecardAPI(token, {
@@ -59,7 +59,7 @@ describe('Events', () => {
     const ruleId = 'test_03806000-2806-11ec-9621-0242ac130002';
     const requestBody = {
       type: 'scorecard.changed',
-      event: { test: 'test_event', trial: { ruleId } },
+      event: { test: 'test_event', trial: { rule_id: ruleId } },
     };
 
     const api = new SecurityScorecardAPI(token, {

@@ -4,6 +4,7 @@ import { initialize } from './commands/initialize';
 import configure from './commands/configure';
 import install from './commands/install';
 import validate from './commands/validate';
+import simulate from './commands/simulate';
 
 program.version('0.0.1');
 
@@ -36,5 +37,11 @@ program
   .option('--no-environment', 'no environment selected')
   .option('-u, --url [value]', 'URL where manifest is published')
   .action(validate);
+
+program
+  .command('simulate-event')
+  .description('simulate any event')
+  .option('--no-environment', 'no environment selected')
+  .action(simulate);
 
 program.parse(process.argv);

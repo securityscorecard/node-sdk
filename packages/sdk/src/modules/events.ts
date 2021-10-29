@@ -10,15 +10,13 @@ export default function Events(api: SecurityScorecardApi): EventsModule {
       event: any;
       realEvent?: boolean;
     }): Promise<{ received: boolean } | undefined> {
-      const rule = TriggerRequest.ruleId;
-      const isReal = TriggerRequest.realEvent;
-      if (!isReal && !rule) throw new Error('A ruleId is required!');
+      if (!TriggerRequest.realEvent && !TriggerRequest.ruleId) throw new Error('A ruleId is required!');
 
-      const { type, event } = TriggerRequest;
-
-      const dispatch = await api.apiCall<{ received: boolean }>(`/events/${type}`, {
+      const dispatch = await api.apiCall<{ received: boolean }>(`/events/${TriggerRequest.type}`, {
         method: HTTPMethod.POST,
-        body: isReal ? event : { ...event, trial: { ruleId: rule } },
+        body: TriggerRequest.realEvent
+          ? TriggerRequest.event
+          : { ...TriggerRequest.event, trial: { rule_id: TriggerRequest.ruleId } },
       });
 
       return dispatch;

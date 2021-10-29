@@ -1,6 +1,7 @@
 import inquirer from 'inquirer';
 import { ENVIRONMENTS } from './helpers';
 import { ValidateExtraction, ExampleItem, Example, Enviroment } from './types';
+import { error, log } from './logger';
 
 export const askExampleSelection = (examples: ExampleItem[]): Promise<Example> =>
   inquirer.prompt([
@@ -52,5 +53,32 @@ export const askEnvironment = (
       name: 'environment',
       message,
       choices: ENVIRONMENTS,
+    },
+  ]);
+
+export const askEventToSimulate = (rules: { name: any }[]): Promise<{ rule: string }> =>
+  inquirer.prompt([
+    {
+      type: 'list',
+      message: 'Select rule to simulate',
+      name: 'rule',
+      choices: rules,
+    },
+  ]);
+
+export const askForFakeEvent = () =>
+  inquirer.prompt([
+    {
+      type: 'editor',
+      name: 'fake',
+      message: 'Add a fake event to trigger!',
+      validate(event) {
+        try {
+          JSON.parse(event);
+        } catch (err) {
+          log(error('error while parsing event'));
+        }
+        return true;
+      },
     },
   ]);
