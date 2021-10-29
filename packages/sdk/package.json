@@ -1,6 +1,6 @@
 {
   "name": "@securityscorecard/sdk",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": false,
   "description": "SecurityScorecard Public SDK",
   "main": "build/src/index.js",

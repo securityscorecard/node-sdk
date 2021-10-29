@@ -48,3 +48,18 @@ export type InstallArguments = {
   url?: string;
   environment: boolean;
 };
+
+export type SubscriptionList = {
+  entries: {
+    id: string;
+    pausedAt: string;
+    eventType: string;
+    delivery: { workflow: any };
+    externalEditUrl: string;
+    createdBy: string;
+    createdAt: string;
+    updatedBy: string;
+    updatedAt: string;
+  }[];
+  size: number;
+};

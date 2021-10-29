@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/cli@0.6.0...@securityscorecard/cli@0.7.0) (2021-10-29)
+
+
+### Features
+
+* **cli:** added validate manifest command ([6e1b1d9](https://github.com/securityscorecard/node-sdk/commit/6e1b1d91596a4203af19023931d46a2428572b47))
+
+
+
+
+
 # [0.6.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/cli@0.4.1...@securityscorecard/cli@0.6.0) (2021-09-21)
 
 
