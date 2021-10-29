@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/sdk@0.6.0...@securityscorecard/sdk@0.7.0) (2021-10-29)
+
+
+### Features
+
+* **cli:** added validate manifest command - updated tests ([830169c](https://github.com/securityscorecard/node-sdk/commit/830169c00c9ff5a8226887c0bbdf8d274803c7b9))
+* **sdk:** added validate manifest ([8905646](https://github.com/securityscorecard/node-sdk/commit/8905646ba24bc4aa930a5b22f3d41243bd82542b))
+* **sdk:** added validate manifest - added tests ([9e0882f](https://github.com/securityscorecard/node-sdk/commit/9e0882f84dee2e4c619d4d78f69b599fe04f87ac))
+* **sdk:** rule trigger and subscriptions owned ([f6a2876](https://github.com/securityscorecard/node-sdk/commit/f6a28767da9cbb0c703ea77439143a2f0d0bd544))
+* **sdk:** validate manifest - updated docs ([068ca05](https://github.com/securityscorecard/node-sdk/commit/068ca051b1a129b366abcb1134ec2b7062c94de2))
+
+
+
+
+
 # [0.6.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/sdk@0.4.1...@securityscorecard/sdk@0.6.0) (2021-09-21)
 
 
