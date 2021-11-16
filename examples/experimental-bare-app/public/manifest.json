@@ -1,9 +1,16 @@
 {
+   "url": "https://company.com/manifest.json",
    "name": "Experimental Bare App",
-   "description": "experimental bare app",
-   "long_description": "app only for experimental purposes only",
-   "url": "https://bare-app-cristiandley.vercel.app/public/manifest.json",
-   "homepage": "https://bare-app-cristiandley.vercel.app",
-   "developer": "cristiandley.com",
-   "logo_url": "https://avatars.githubusercontent.com/u/1873659?s=60&v=4"
+   "developer": {
+      "websiteUrl": "maintainer.com"
+   },
+   "namespace": "experimental_bare_app",
+   "description": {
+      "long": "application only for experimental purposes only",
+      "short": "experimental bare app"
+   },
+   "displaySettings": {
+      "logoUrl": "https://company.com/logo",
+      "homepageUrl": "https://company.com"
+   }
 }
