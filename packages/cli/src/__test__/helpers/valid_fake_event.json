@@ -1,0 +1,46 @@
+{
+  "platform_score_date": 42030679,
+  "current": {
+    "score": 90,
+    "factors": {
+      "network_security": 80,
+      "dns_health": 95,
+      "endpoint_security": 88,
+      "patching_cadence": 85
+    }
+  },
+  "domain": "example.com",
+  "previous": {
+    "score": 10,
+    "factors": {
+      "network_security": 80,
+      "dns_health": 95,
+      "endpoint_security": 88,
+      "patching_cadence": 85
+    }
+  },
+  "issues": {
+    "csp_no_policy": {
+      "active": {
+        "count": 15
+      },
+      "departed": {
+        "count": 3
+      },
+      "resolved": {
+        "count": 2
+      }
+    },
+    "domain_missing_https": {
+      "active": {
+        "count": 5
+      }
+    }
+  },
+  "breach": {
+    "root_cause": "hacked",
+    "records_lost": 10000,
+    "date_discovered": 0,
+    "type_of_breach": ""
+  }
+}

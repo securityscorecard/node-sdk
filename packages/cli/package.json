@@ -1,6 +1,6 @@
 {
   "name": "@securityscorecard/cli",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "SecurityScorecard CLI",
   "main": "bin/ssc.js",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@securityscorecard/sdk": "^0.7.0",
+    "@securityscorecard/sdk": "^0.8.0",
     "chalk": "^4.1.2",
     "commander": "^8.1.0",
     "inquirer": "^8.1.2",

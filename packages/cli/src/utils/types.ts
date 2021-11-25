@@ -52,14 +52,16 @@ export type InstallArguments = {
 export type SubscriptionList = {
   entries: {
     id: string;
-    pausedAt: string;
-    eventType: string;
+    /* eslint-disable  camelcase */
+    paused_at: string;
+    event_type: string;
     delivery: { workflow: any };
-    externalEditUrl: string;
-    createdBy: string;
-    createdAt: string;
-    updatedBy: string;
-    updatedAt: string;
+    external_edit_url: string;
+    created_by: string;
+    created_at: string;
+    updated_by: string;
+    updated_at: string;
+    /* eslint-enable  camelcase */
   }[];
   size: number;
 };

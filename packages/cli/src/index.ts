@@ -42,6 +42,7 @@ program
   .command('simulate-event')
   .description('simulate any event')
   .option('--no-environment', 'no environment selected')
+  .option('-f, --file [path]', 'path of the file containing the event payload')
   .action(simulate);
 
 program.parse(process.argv);
