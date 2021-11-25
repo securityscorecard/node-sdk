@@ -6,14 +6,33 @@ import { SSC_RC_PATH } from '../utils/helpers';
 import { error, info, log } from '../utils/logger';
 import { SubscriptionList } from '../utils/types';
 import { askEventToSimulate, askForFakeEvent } from '../utils/inquires';
+import { load as loadJSON } from '../utils/json';
 
 const operationGetSubscriptions = 'Getting Rules';
 const operationSimulateRule = 'Simulating Rule';
+const operationLoadingFile = 'Loading event from file';
 const message: string = 'In which environment do you want to trigger the event?';
 
-const simulate = async (args: { environment: string }) => {
+const simulate = async (args: { environment: boolean; file: string }) => {
   const env: string = args.environment ? 'production' : (await inquires.askEnvironment(message)).environment;
   const token: string = rc.readRc(SSC_RC_PATH)[env]?.token!;
+  const filePath: string = args.file;
+
+  let fakeEvent;
+
+  if (filePath) {
+    const loadingFile = ora(operationLoadingFile).start();
+    try {
+      fakeEvent = loadJSON(filePath);
+      loadingFile.succeed();
+    } catch (err) {
+      loadingFile.fail();
+      log(error('Invalid file arg'));
+      log(error(err.message));
+      return;
+    }
+  }
+
   const gettingSubscriptions = ora(operationGetSubscriptions).start();
 
   if (!token) {
@@ -23,7 +42,17 @@ const simulate = async (args: { environment: string }) => {
     return;
   }
 
-  const subscriptions = (await apps.subscriptions({ token, env })) as SubscriptionList;
+  let subscriptions: SubscriptionList = {} as SubscriptionList;
+
+  try {
+    subscriptions = (await apps.subscriptions({ token, env })) as SubscriptionList;
+  } catch (err) {
+    gettingSubscriptions.fail();
+    log(error('API error'));
+    log(error(`Error: ${err.message}`));
+    return;
+  }
+
   const availableSubscriptions = subscriptions?.entries?.filter(s => !s.delivery.workflow.hidden) || [];
 
   if (!availableSubscriptions.length) {
@@ -45,10 +74,20 @@ const simulate = async (args: { environment: string }) => {
       name: e.name,
     })),
   );
+
   const rule = availableRules.find(r => r.name === selection.rule);
-  const eventTrial = await askForFakeEvent();
+
+  if (!fakeEvent) {
+    try {
+      const rawEvent = await askForFakeEvent();
+      fakeEvent = JSON.parse(rawEvent);
+    } catch (err) {
+      log(error('Invalid fake event'));
+      return;
+    }
+  }
+
   const simulating = ora(operationSimulateRule).start();
-  const fakeEvent = JSON.parse(eventTrial.fake);
   log(info('\nSimulating:\n', JSON.stringify(fakeEvent)));
 
   try {

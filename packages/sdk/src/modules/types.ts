@@ -9,17 +9,19 @@ export type User = {
   authMechanism?: string;
 };
 
+/* eslint-disable camelcase */
 export type Subscription = {
   id: string;
-  pausedAt: string;
-  eventType: string;
+  paused_at: string;
+  event_type: string;
   delivery: { workflow: any };
-  externalEditUrl: string;
-  createdBy: string;
-  createdAt: string;
-  updatedBy: string;
-  updatedAt: string;
+  external_edit_url: string;
+  created_by: string;
+  created_at: string;
+  updated_by: string;
+  updated_at: string;
 };
+/* eslint-enable camelcase */
 
 type SecurityScorecardModule = {
   name: string;
