@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/sdk@0.7.0...@securityscorecard/sdk@0.8.0) (2021-11-25)
+
+
+### Features
+
+* **cli:** support file for simulate event ([8c0a60a](https://github.com/securityscorecard/node-sdk/commit/8c0a60a05121a080ea256a6ac3a0499f603fd982))
+
+
+
+
+
 # [0.7.0](https://github.com/securityscorecard/node-sdk/compare/@securityscorecard/sdk@0.6.0...@securityscorecard/sdk@0.7.0) (2021-10-29)
 
 
