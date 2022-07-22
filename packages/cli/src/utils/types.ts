@@ -25,7 +25,7 @@ export type ValidateExtraction = {
 };
 
 export interface IPackageManifest extends pacote.ManifestResult {
-  apps: {
+  apps?: {
     experiments?: ExampleItem[];
     examples?: ExampleItem[];
   };

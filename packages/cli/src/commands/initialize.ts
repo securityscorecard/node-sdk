@@ -18,6 +18,7 @@ export const fetchExampleList = async (): Promise<ExampleItem[] | undefined> => 
     const response = (await pacote.manifest(CLI_MANIFEST, {
       fullMetadata: true,
     })) as IPackageManifest;
+    // @ts-ignore
     exampleList = [...response?.apps.experiments!, ...response?.apps.examples!];
     spinner.succeed(operation);
   } catch (e) {
