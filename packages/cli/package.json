@@ -31,7 +31,7 @@
     "ora": "^5.4.1",
     "pacote": "^11.3.5",
     "superagent": "^6.1.0",
-    "yaml": "^1.10.2"
+    "yaml": "^2.2.2"
   },
   "devDependencies": {
     "@types/inquirer": "^7.3.3",
